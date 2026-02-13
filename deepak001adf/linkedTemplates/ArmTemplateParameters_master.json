@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "deepak001adf"
+		},
+		"AzureDataLakeStorage_LS_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricks_DS_accessToken": {
+			"value": ""
+		},
+		"AzureDataLakeStorage_LS_properties_typeProperties_url": {
+			"value": "https://deepakadls001.dfs.core.windows.net/"
+		},
+		"AzureDatabricks_DS_properties_typeProperties_existingClusterId": {
+			"value": "0212-160259-i0vpfste"
+		},
+		"HttpServer_LS_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/deepakmali17/DataEngineering_AdventureWorks/refs/heads/main/data/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
