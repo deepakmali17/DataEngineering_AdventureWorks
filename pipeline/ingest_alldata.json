@@ -123,8 +123,6 @@
 						{
 							"name": "Notebook1",
 							"type": "DatabricksNotebook",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "Copy data1",
