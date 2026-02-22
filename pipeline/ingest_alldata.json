@@ -121,7 +121,7 @@
 							]
 						},
 						{
-							"name": "Notebook1",
+							"name": "bronzelayer_impl",
 							"type": "DatabricksNotebook",
 							"dependsOn": [
 								{
@@ -141,9 +141,36 @@
 							"userProperties": [],
 							"typeProperties": {
 								"notebookPath": {
-									"value": "@{concat('/Users/deepakm2azr@gmail.com/AW/',split(item().dst,'.')[0])}",
+									"value": "@{concat('/Users/deepakm2azr@gmail.com/AW/Bronze/',split(item().dst,'.')[0],'_B')}",
 									"type": "Expression"
 								}
+							},
+							"linkedServiceName": {
+								"referenceName": "AzureDatabricks_DS",
+								"type": "LinkedServiceReference"
+							}
+						},
+						{
+							"name": "silverlayer_impl",
+							"type": "DatabricksNotebook",
+							"dependsOn": [
+								{
+									"activity": "bronzelayer_impl",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"notebookPath": "@{concat('/Users/deepakm2azr@gmail.com/AW/Silver/',split(item().dst,'.')[0],'_S')}"
 							},
 							"linkedServiceName": {
 								"referenceName": "AzureDatabricks_DS",
